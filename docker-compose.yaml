@@ -1,0 +1,10 @@
+services:
+  geph-test:
+    build: .
+    ports:
+      #socks5代理端口
+      - "59909:9999"
+      #http代理端口
+      - "59910:19999"
+    volumes:
+      - ./config.yaml:/root/config.yaml

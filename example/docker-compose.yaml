@@ -1,0 +1,17 @@
+services:
+  geph4-client:
+    image: whp98/geph5-client
+    container_name: geph5-client
+    restart: unless-stopped
+    ports:
+      #socks5代理端口
+      - "59909:9999"
+      #http代理端口
+      - "59910:19999"
+    # 修改成你的配置文件
+    # volumes:
+    #   - ./config.yaml:/root/config.yaml
+    logging:
+      driver: local
+      options:
+        max-size: "10m"
